@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pavani & Gopi Krishna – Engagement Invitation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #f4c96b;
+    }
+
+    /* ==========================
+       GLOBAL STYLES
+    =========================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: black;
+      font-family: "Playfair Display", serif;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    /* ==========================
+       1. LOADING SCREEN
+    =========================== */
+    #loadingScreen {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, #1b1324, #050509, #000);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      text-align: center;
+      animation: fadeOut 1s ease-out forwards;
+      animation-delay: 3.2s;
+    }
+
+    #loadingNames {
+      font-size: 2rem;
+      font-family: "Great Vibes", cursive;
+      color: var(--gold);
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    #loadingSub {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.7);
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+      animation-delay: 0.8s;
+      text-transform: uppercase;
+    }
+
+    /* Golden shimmer */
+    #loadingScreen::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://i.imgur.com/jf7pU0O.png");
+      background-size: cover;
+      opacity: 0.13;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+    @keyframes shimmer {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-40%); }
+    }
+
+
+    /* ==========================
+       2. INTRO ANIMATION WRAPPER
+    =========================== */
+    #introWrap {
+      opacity: 0;
+      animation: introFade 1.5s ease-out forwards;
+      animation-delay: 4s;
+    }
+
+    @keyframes introFade {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+
+    /* ==========================
+       ORIGINAL INVITATION STYLES
+       (YOUR EXISTING DESIGN REMAINS SAME)
+    =========================== */
+
+    .invitation-wrapper {
+      max-width: 420px;
+      margin: 40px auto;
+      padding: 16px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(0,0,0,0.8));
+      border-radius: 20px;
+      border: 1px solid rgba(244,201,107,0.4);
+      box-shadow: 0 0 30px rgba(244,201,107,0.2);
+    }
+
+    .invitation-inner {
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(5,5,9,0.9);
+      border: 1px solid rgba(244,201,107,0.3);
+    }
+
+    .top-label {
+      text-align: center;
+      letter-spacing: 0.2em;
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    /* Ring circle */
+    .ring-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      margin: 10px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 12px var(--gold); }
+      50% { box-shadow: 0 0 22px var(--gold); }
+      100% { box-shadow: 0 0 12px var(--gold); }
+    }
+
+    .names-script {
+      font-family: "Great Vibes";
+      font-size: 1.7rem;
+      text-align: center;
+      color: var(--gold);
+    }
+
+    .and-symbol {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* Scroll body */
+    .scroll-body {
+      margin-top: 12px;
+      padding: 14px;
+      border: 1px solid rgba(244,201,107,0.35);
+      border-radius: 12px;
+      background: rgba(10,10,16,0.95);
+      animation: unroll 2s ease-out forwards;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    @keyframes unroll {
+      0% { max-height: 0; }
+      100% { max-height: 600px; }
+    }
+
+    /* Countdown */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+      gap: 10px;
+    }
+
+    .time-box {
+      border: 1px solid rgba(244,201,107,0.3);
+      padding: 6px;
+      border-radius: 10px;
+      width: 60px;
+      text-align: center;
+    }
+
+    .time-number {
+      color: var(--gold);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 16px;
+    }
+
+
+    /* ==========================
+       3. SHARE BUTTON (FLOATING)
+    =========================== */
+    #shareBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      background: radial-gradient(circle, #f7d78a, #c89b3c);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 12px rgba(244,201,107,0.7);
+      cursor: pointer;
+      animation: popIn 0.9s ease-out forwards;
+      animation-delay: 4s;
+      opacity: 0;
+    }
+
+    #shareBtn span {
+      font-size: 1.4rem;
+      color: black;
+      font-weight: bold;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.3); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ===============================
+       LOADING SCREEN
+  =============================== -->
+  <div id="loadingScreen">
+    <div id="loadingNames">Pavani &amp; Gopi Krishna</div>
+    <div id="loadingSub">Engagement Ceremony</div>
+  </div>
+
+  <!-- ===============================
+       INTRO WRAPPER  
+  =============================== -->
+  <div id="introWrap">
+
+    <!-- ORIGINAL INVITATION CONTENT -->
+    <div class="invitation-wrapper">
+      <div class="invitation-inner">
+
+        <div class="top-label">Engagement Ceremony</div>
+
+        <div class="ring-circle">
+          <div class="names-script">
+            Pavani
+            <div class="and-symbol">&amp;</div>
+            Gopi Krishna
+          </div>
+        </div>
+
+        <div class="scroll-body">
+          <p style="text-align:center; opacity:0.8;">We invite you to join</p>
+          <p style="text-align:center; margin:6px 0;">
+            <span style="color:var(--gold); font-weight:600;">Engagement Ceremony</span>
+          </p>
+
+          <p style="text-align:center; color:#fff8d7; margin-bottom:12px;">
+            <b>Pavani</b> &amp; <b>Gopi Krishna</b>
+          </p>
+
+          <p><b>Date:</b> 23 February</p>
+          <p><b>Time:</b> 10:36 AM</p>
+          <p><b>Venue:</b> XYZ</p>
+
+          <!-- Countdown -->
+          <div class="countdown">
+            <div class="time-box">
+              <div id="days" class="time-number">--</div>Days
+            </div>
+            <div class="time-box">
+              <div id="hours" class="time-number">--</div>Hours
+            </div>
+            <div class="time-box">
+              <div id="minutes" class="time-number">--</div>Min
+            </div>
+            <div class="time-box">
+              <div id="seconds" class="time-number">--</div>Sec
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-note">
+          Your presence will make our day special.
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===============================
+        SHARE BUTTON
+  =============================== -->
+  <div id="shareBtn">
+    <span>⇪</span>
+  </div>
+
+
+  <!-- ===============================
+       JAVASCRIPT
+  =============================== -->
+  <script>
+    // COUNTDOWN
+    const targetDate = new Date("2026-02-23T10:36:00");
+
+    function cd() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) return;
+
+      document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
+      document.getElementById("hours").innerText = Math.floor(diff / (1000*60*60) % 24);
+      document.getElementById("minutes").innerText = Math.floor(diff / (1000*60) % 60);
+      document.getElementById("seconds").innerText = Math.floor(diff/1000 % 60);
+    }
+    setInterval(cd, 1000);
+
+
+    // SHARE BUTTON LOGIC
+    const shareBtn = document.getElementById("shareBtn");
+    shareBtn.onclick = () => {
+      const message = encodeURIComponent(
+        "You're invited to Pavani & Gopi Krishna's Engagement!\nClick to view invitation: <YOUR LINK HERE>"
+      );
+      window.open("https://wa.me/?text=" + message, "_blank");
+    };
+  </script>
+
+</body>
+</html>
