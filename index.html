@@ -47,7 +47,7 @@ body::before {
   height: 100%;
   background: url("./pavani.jpeg") center / cover no-repeat;
   opacity: 0.35;
-  filter: blur(2px);
+  filter: none;
   z-index: -2;
 }
 
@@ -61,7 +61,7 @@ body::after {
   height: 100%;
   background: url("./gopikrishna.jpeg") center / cover no-repeat;
   opacity: 0.35;
-  filter: blur(2px);
+  filter: none;
   z-index: -2;
 }
 
@@ -321,20 +321,33 @@ body::after {
   </div>
 
   <script>
-    const targetDate = new Date("2026-02-23T10:36:00");
-    function cd() {
-      const now = new Date();
-      const diff = targetDate - now;
-      if (diff <= 0) return;
-      document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
-      document.getElementById("hours").innerText = Math.floor(diff / (1000*60*60) % 24);
-      document.getElementById("minutes").innerText = Math.floor(diff / (1000*60) % 60);
-      document.getElementById("seconds").innerText = Math.floor(diff/1000 % 60);
-    }
-    setInterval(cd, 1000);
-  </script>
+const targetDate = new Date("2026-02-23T10:36:00");
+
+function cd() {
+  const now = new Date();
+  const diff = targetDate - now;
+  if (diff <= 0) return;
+  document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
+  document.getElementById("hours").innerText = Math.floor(diff / (1000*60*60) % 24);
+  document.getElementById("minutes").innerText = Math.floor(diff / (1000*60) % 60);
+  document.getElementById("seconds").innerText = Math.floor(diff/1000 % 60);
+}
+setInterval(cd, 1000);
+
+/* SHARE BUTTON */
+const shareBtn = document.getElementById("shareBtn");
+
+shareBtn.onclick = () => {
+  const link = window.location.href;
+  const message = encodeURIComponent(
+    "You're invited to Pavani & Gopi Krishna's Engagement!\n" + link
+  );
+  window.open("https://wa.me/?text=" + message, "_blank");
+};
+</script>
 
 </body>
 </html>
+
 
 
