@@ -155,45 +155,47 @@ body::after {
       margin-bottom: 8px;
     }
 
-    /* HEART CONTAINER */
+  /* HEART CONTAINER */
 .heart-container {
   position: relative;
-  width: 160px;
-  height: 140px;
-  margin: 20px auto;
+  width: 180px;
+  height: 180px;
+  margin: 30px auto;
 }
 
 /* Heart shape */
 .heart {
-  width: 220px;
-  height: 200px;
-  background: linear-gradient(145deg, #f4c96b, #c89b3c);
-  margin: 20px auto;
   position: relative;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(145deg, #f4c96b, #c89b3c);
   transform: rotate(-45deg);
-  box-shadow: 0 0 30px rgba(244,201,107,0.6);
+  box-shadow: 0 0 25px rgba(244,201,107,0.6);
+  margin: auto;
 }
 
+/* top circles */
 .heart::before,
 .heart::after {
   content: "";
   position: absolute;
-  width: 220px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   background: linear-gradient(145deg, #f4c96b, #c89b3c);
   border-radius: 50%;
 }
 
 .heart::before {
-  top: -110px;
+  top: -90px;
   left: 0;
 }
 
 .heart::after {
-  left: 110px;
+  left: 90px;
   top: 0;
 }
 
+/* Names inside heart */
 .heart-names {
   position: absolute;
   inset: 0;
@@ -203,34 +205,14 @@ body::after {
   align-items: center;
   justify-content: center;
   font-family: "Great Vibes", cursive;
-  font-size: 2rem;
-  color: black;
+  font-size: 1.8rem;
+  color: #1a1200;
   text-align: center;
   line-height: 1.2;
 }
 
 .and {
   font-size: 1.4rem;
-}
-
-/* Text inside heart */
-.heart-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: "Great Vibes", cursive;
-  font-size: 1.6rem;
-  color: #1a1200; /* deep gold-brown for contrast */
-  font-weight: 600;
-  z-index: 3;
-
-  /* glow for readability */
-  text-shadow:
-    0 0 4px rgba(255, 230, 150, 0.6),
-    0 0 8px rgba(255, 215, 100, 0.4);
 }
 
 
@@ -366,13 +348,16 @@ body::after {
         <div class="top-label">Engagement Ceremony Of</div>
 
 
-       <div class="heart">
-  <div class="heart-names">
-    Pavani<br>
-    <span class="and">&</span><br>
-    Gopi Krishna
+       <div class="heart-container">
+  <div class="heart">
+    <div class="heart-names">
+      Pavani<br>
+      <span class="and">&</span><br>
+      Gopi Krishna
+    </div>
   </div>
 </div>
+
 
 
         <div class="scroll-body">
@@ -454,6 +439,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+
 
 
 
