@@ -165,37 +165,52 @@ body::after {
 
 /* Heart shape */
 .heart {
-  position: absolute;
-  width: 80px;
-  height: 120px;
-  background: linear-gradient(145deg, #f7d78a, #c89b3c);
-  left: 40px;
-  top: 10px;
+  width: 220px;
+  height: 200px;
+  background: linear-gradient(145deg, #f4c96b, #c89b3c);
+  margin: 20px auto;
+  position: relative;
   transform: rotate(-45deg);
-  border-radius: 80px 80px 0 0;
-  box-shadow:
-    0 0 15px rgba(244,201,107,0.8),
-    0 0 30px rgba(244,201,107,0.5);
+  box-shadow: 0 0 30px rgba(244,201,107,0.6);
 }
-
 
 .heart::before,
 .heart::after {
   content: "";
   position: absolute;
-  width: 80px;
-  height: 120px;
-  background: var(--gold);
-  border-radius: 80px 80px 0 0;
+  width: 220px;
+  height: 200px;
+  background: linear-gradient(145deg, #f4c96b, #c89b3c);
+  border-radius: 50%;
 }
 
 .heart::before {
-  left: 40px;
-  transform: rotate(90deg);
+  top: -110px;
+  left: 0;
 }
 
 .heart::after {
-  top: -40px;
+  left: 110px;
+  top: 0;
+}
+
+.heart-names {
+  position: absolute;
+  inset: 0;
+  transform: rotate(45deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Great Vibes", cursive;
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.and {
+  font-size: 1.4rem;
 }
 
 /* Text inside heart */
@@ -351,10 +366,11 @@ body::after {
         <div class="top-label">Engagement Ceremony Of</div>
 
 
-       <div class="heart-container">
-  <div class="heart"></div>
-  <div class="heart-text">
-    Pavani<br>&<br>Gopi Krishna
+       <div class="heart">
+  <div class="heart-names">
+    Pavani<br>
+    <span class="and">&</span><br>
+    Gopi Krishna
   </div>
 </div>
 
@@ -400,7 +416,7 @@ body::after {
   </div>
 
 <script>
-const targetDate = new Date("2026-02-23T10:36:00");
+const targetDate = new Date("2026-02-22T10:26:00");
 
 function cd() {
   const now = new Date();
@@ -438,6 +454,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+
 
 
 
