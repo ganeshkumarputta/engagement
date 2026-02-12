@@ -10,6 +10,11 @@
 
 
   <style>
+    .amp {
+  margin: 0 14px;
+  display: inline-block;
+}
+
     :root {
       --gold: #f4c96b;
     }
@@ -290,7 +295,10 @@ body::after {
 
   <!-- LOADING SCREEN -->
   <div id="loadingScreen">
-    <div id="loadingNames">Pavani &amp; Gopi Krishna</div>
+    <div id="loadingNames">
+  Pavani <span class="amp">&amp;</span> Gopi Krishna
+</div>
+
     <div id="loadingSub">Engagement Ceremony</div>
   </div>
 
@@ -394,6 +402,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+
 
 
 
