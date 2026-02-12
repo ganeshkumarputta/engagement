@@ -22,34 +22,49 @@
       box-sizing: border-box;
     }
 
-    body {
-      background: black;
-      font-family: "Playfair Display", serif;
-      overflow-x: hidden;
-      color: white;
-      position: relative;
-    }
+   body {
+  font-family: "Playfair Display", serif;
+  overflow-x: hidden;
+  color: white;
+  position: relative;
+  background:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,0.8) 0%,
+      rgba(0,0,0,0.6) 30%,
+      rgba(0,0,0,0.6) 70%,
+      rgba(0,0,0,0.8) 100%
+    );
+}
 
-    /* Left photo */
-   body::before {
+/* Left photo */
+body::before {
   content: "";
   position: fixed;
-  inset: 0;
-  background: url("./pavani.jpeg") left center / cover no-repeat;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: url("./pavani.jpeg") center / cover no-repeat;
   opacity: 0.35;
   filter: blur(2px);
   z-index: -2;
 }
 
+/* Right photo */
 body::after {
   content: "";
   position: fixed;
-  inset: 0;
-  background: url("./gopikrishna.jpeg") right center / cover no-repeat;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: url("./gopikrishna.jpeg") center / cover no-repeat;
   opacity: 0.35;
   filter: blur(2px);
   z-index: -2;
 }
+
 
 
     /* ==========================
@@ -321,4 +336,5 @@ body::after {
 
 </body>
 </html>
+
 
