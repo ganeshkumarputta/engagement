@@ -46,7 +46,7 @@ body::before {
   width: 50%;
   height: 100%;
   background: url("./pavani.jpeg") center / cover no-repeat;
-  opacity: 0.35;
+  opacity: 0.6;
   filter: none;
   z-index: -2;
 }
@@ -60,10 +60,11 @@ body::after {
   width: 50%;
   height: 100%;
   background: url("./gopikrishna.jpeg") center / cover no-repeat;
-  opacity: 0.35;
+  opacity: 0.6;
   filter: none;
   z-index: -2;
 }
+
 
 
 
@@ -334,20 +335,32 @@ function cd() {
 }
 setInterval(cd, 1000);
 
-/* SHARE BUTTON */
-const shareBtn = document.getElementById("shareBtn");
+/* SHARE BUTTON FIX */
+window.addEventListener("load", function () {
+  const shareBtn = document.getElementById("shareBtn");
 
-shareBtn.onclick = () => {
-  const link = window.location.href;
-  const message = encodeURIComponent(
-    "You're invited to Pavani & Gopi Krishna's Engagement!\n" + link
-  );
-  window.open("https://wa.me/?text=" + message, "_blank");
-};
+  shareBtn.addEventListener("click", function () {
+    const link = window.location.href;
+    const text = "You're invited to Pavani & Gopi Krishna's Engagement! " + link;
+
+    if (navigator.share) {
+      navigator.share({
+        title: "Engagement Invitation",
+        text: text,
+        url: link
+      });
+    } else {
+      const message = encodeURIComponent(text);
+      window.open("https://wa.me/?text=" + message, "_blank");
+    }
+  });
+});
 </script>
+
 
 </body>
 </html>
+
 
 
 
