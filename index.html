@@ -168,13 +168,16 @@ body::after {
   position: absolute;
   width: 80px;
   height: 120px;
-  background: var(--gold);
+  background: linear-gradient(145deg, #f7d78a, #c89b3c);
   left: 40px;
   top: 10px;
   transform: rotate(-45deg);
   border-radius: 80px 80px 0 0;
-  box-shadow: 0 0 20px rgba(244,201,107,0.8);
+  box-shadow:
+    0 0 15px rgba(244,201,107,0.8),
+    0 0 30px rgba(244,201,107,0.5);
 }
+
 
 .heart::before,
 .heart::after {
@@ -204,11 +207,17 @@ body::after {
   justify-content: center;
   text-align: center;
   font-family: "Great Vibes", cursive;
-  font-size: 1.5rem;
-  color: black;
+  font-size: 1.6rem;
+  color: #1a1200; /* deep gold-brown for contrast */
   font-weight: 600;
-  z-index: 2;
+  z-index: 3;
+
+  /* glow for readability */
+  text-shadow:
+    0 0 4px rgba(255, 230, 150, 0.6),
+    0 0 8px rgba(255, 215, 100, 0.4);
 }
+
 
 
     @keyframes pulseGlow {
@@ -331,7 +340,7 @@ body::after {
   <!-- LOADING SCREEN -->
   <div id="loadingScreen">
     <div id="loadingNames">Pavani &amp; Gopi Krishna</div>
-    <div id="loadingSub">Engagement Ceremony Of</div>
+    <div id="loadingSub">Engagement Ceremony</div>
   </div>
 
   <!-- INVITATION -->
@@ -339,7 +348,7 @@ body::after {
     <div class="invitation-wrapper">
       <div class="invitation-inner">
 
-        <div class="top-label">Engagement Ceremony</div>
+        <div class="top-label">Engagement Ceremony Of</div>
 
 
        <div class="heart-container">
@@ -429,6 +438,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+
 
 
 
