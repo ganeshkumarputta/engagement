@@ -259,6 +259,24 @@ body::after {
       from { transform: scale(0.3); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+    .map-btn {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  padding: 10px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #f4c96b, #c89b3c);
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.map-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(244,201,107,0.6);
+}
+
 
   </style>
 </head>
@@ -298,7 +316,12 @@ body::after {
 
           <p><b>Date:</b> 23 February</p>
           <p><b>Time:</b> 10:36 AM</p>
-          <p><b>Venue:</b> XYZ</p>
+          <p><b>Venue:</b> Shri Padha Kalyana Mandapam</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Shri+Padha+Kalyana+Mandapam" 
+            target="_blank" 
+            class="map-btn">
+            View Directions
+          </a>
 
           <div class="countdown">
             <div class="time-box"><div id="days" class="time-number">--</div>Days</div>
@@ -321,7 +344,7 @@ body::after {
     <span>⇪</span>
   </div>
 
- <script>
+<script>
 const targetDate = new Date("2026-02-23T10:36:00");
 
 function cd() {
@@ -333,6 +356,8 @@ function cd() {
   document.getElementById("minutes").innerText = Math.floor(diff / (1000*60) % 60);
   document.getElementById("seconds").innerText = Math.floor(diff/1000 % 60);
 }
+
+cd();
 setInterval(cd, 1000);
 
 /* SHARE BUTTON */
@@ -360,8 +385,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
 </body>
 </html>
+
 
 
 
