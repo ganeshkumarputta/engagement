@@ -165,33 +165,36 @@ body::after {
 
 /* Heart shape */
 .heart {
-  position: relative;
-  width: 180px;
-  height: 180px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 120px;
+  height: 120px;
   background: linear-gradient(145deg, #f4c96b, #c89b3c);
   transform: rotate(-45deg);
   box-shadow: 0 0 25px rgba(244,201,107,0.6);
-  margin: auto;
 }
 
-/* top circles */
+/* Top circles */
 .heart::before,
 .heart::after {
   content: "";
   position: absolute;
-  width: 180px;
-  height: 180px;
+  width: 120px;
+  height: 120px;
   background: linear-gradient(145deg, #f4c96b, #c89b3c);
   border-radius: 50%;
 }
 
 .heart::before {
-  top: -90px;
+  top: -60px;
   left: 0;
 }
 
 .heart::after {
-  left: 90px;
+  left: 60px;
   top: 0;
 }
 
@@ -205,14 +208,14 @@ body::after {
   align-items: center;
   justify-content: center;
   font-family: "Great Vibes", cursive;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #1a1200;
   text-align: center;
   line-height: 1.2;
 }
 
 .and {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 
@@ -439,6 +442,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+
 
 
 
