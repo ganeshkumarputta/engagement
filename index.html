@@ -31,26 +31,26 @@
     }
 
     /* Left photo */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: url("pavani.jpeg") left center / cover no-repeat;
-      opacity: 0.35;
-      filter: blur(2px);
-      z-index: -2;
-    }
+   body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("./pavani.jpeg") left center / cover no-repeat;
+  opacity: 0.35;
+  filter: blur(2px);
+  z-index: -2;
+}
 
-    /* Right photo */
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: url("gopikrishna.jpeg") right center / cover no-repeat;
-      opacity: 0.35;
-      filter: blur(2px);
-      z-index: -2;
-    }
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("./gopikrishna.jpeg") right center / cover no-repeat;
+  opacity: 0.35;
+  filter: blur(2px);
+  z-index: -2;
+}
+
 
     /* ==========================
        LOADING SCREEN
@@ -321,3 +321,4 @@
 
 </body>
 </html>
+
