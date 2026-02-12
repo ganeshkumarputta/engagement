@@ -155,17 +155,61 @@ body::after {
       margin-bottom: 8px;
     }
 
-    .ring-circle {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 3px solid var(--gold);
-      margin: 10px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: pulseGlow 3s infinite ease-in-out;
-    }
+    /* HEART CONTAINER */
+.heart-container {
+  position: relative;
+  width: 160px;
+  height: 140px;
+  margin: 20px auto;
+}
+
+/* Heart shape */
+.heart {
+  position: absolute;
+  width: 80px;
+  height: 120px;
+  background: var(--gold);
+  left: 40px;
+  top: 10px;
+  transform: rotate(-45deg);
+  border-radius: 80px 80px 0 0;
+  box-shadow: 0 0 20px rgba(244,201,107,0.8);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 120px;
+  background: var(--gold);
+  border-radius: 80px 80px 0 0;
+}
+
+.heart::before {
+  left: 40px;
+  transform: rotate(90deg);
+}
+
+.heart::after {
+  top: -40px;
+}
+
+/* Text inside heart */
+.heart-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 600;
+  z-index: 2;
+}
+
 
     @keyframes pulseGlow {
       0% { box-shadow: 0 0 12px var(--gold); }
@@ -298,13 +342,13 @@ body::after {
         <div class="top-label">Engagement Ceremony</div>
 
 
-        <div class="ring-circle">
-          <div class="names-script">
-            Pavani
-            <div class="and-symbol"> &amp;</div>
-            Gopi Krishna
-          </div>
-        </div>
+       <div class="heart-container">
+  <div class="heart"></div>
+  <div class="heart-text">
+    Pavani<br>&<br>Gopi Krishna
+  </div>
+</div>
+
 
         <div class="scroll-body">
           <p style="text-align:center; opacity:0.8;">We invite you to join</p>
@@ -385,6 +429,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+
 
 
 
